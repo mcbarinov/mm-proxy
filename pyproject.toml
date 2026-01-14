@@ -1,7 +1,7 @@
 [project]
 name = "mm-proxy"
-version = "0.0.1"
-description = "Async library for verifying proxy IP addresses via public IP check services"
+version = "0.0.2"
+description = "Proxy utilities"
 license = {text = "Proprietary"}
 requires-python = ">=3.13"
 dependencies = [
