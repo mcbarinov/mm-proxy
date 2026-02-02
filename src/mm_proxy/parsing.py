@@ -6,8 +6,7 @@ PROXY_SCHEMES = ("http://", "https://", "socks4://", "socks5://")
 
 
 def parse_proxy_list(text: str) -> list[str]:
-    """
-    Parse proxy entries from text.
+    """Parse proxy entries from text.
 
     Supported formats:
         - URLs: http://, https://, socks4://, socks5:// (with optional auth and port)
@@ -26,6 +25,7 @@ def parse_proxy_list(text: str) -> list[str]:
 
     Returns:
         List of valid proxy entries
+
     """
     result = []
     for raw_line in text.splitlines():

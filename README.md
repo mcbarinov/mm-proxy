@@ -31,8 +31,8 @@ result = await check_proxy_ip_via_public_services("socks5://user:pass@1.2.3.4:10
 
 if result.is_ok():
     print(result.value)                    # "1.2.3.4"
-    print(result.extra["checker_url"])     # "https://api.ipify.org"
-    print(result.extra["latency_ms"])      # 123.45
+    print(result.context["checker_url"])   # "https://api.ipify.org"
+    print(result.context["latency_ms"])    # 123.45
 ```
 
 ### check_proxy_ip_plaintext(checker_url, proxy_url, timeout)

@@ -1,17 +1,17 @@
 [project]
 name = "mm-proxy"
-version = "0.0.2"
+version = "0.1.0"
 description = "Proxy utilities"
 license = {text = "Proprietary"}
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
-    "mm-http~=0.2.4",
+    "mm-http~=0.3.0",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: Other/Proprietary License",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Typing :: Typed",
 ]
 
@@ -24,24 +24,24 @@ dev = [
     "pytest~=9.0.2",
     "pytest-asyncio~=1.3.0",
     "pytest-xdist~=3.8.0",
-    "ruff~=0.14.11",
+    "ruff~=0.14.14",
     "mypy~=1.19.1",
     "pip-audit~=2.10.0",
-    "bandit~=1.9.2",
+    "bandit~=1.9.3",
     "pre-commit~=4.5.1",
     "python-dotenv~=1.2.1",
-    "ty~=0.0.11",
+    "ty~=0.0.14",
 ]
 
 [tool.mypy]
-python_version = "3.13"
+python_version = "3.14"
 warn_no_return = false
 strict = true
 exclude = ["^tests/", "^tmp/"]
 
 [tool.ruff]
 line-length = 130
-target-version = "py313"
+target-version = "py314"
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
@@ -49,7 +49,6 @@ ignore = [
     "A005",     # flake8-builtins: stdlib-module-shadowing
     "ERA001",   # eradicate: commented-out-code
     "PT",       # flake8-pytest-style
-    "D",        # pydocstyle
     "FIX",      # flake8-fixme
     "PLR0911",  # pylint: too-many-return-statements
     "PLR0912",  # pylint: too-many-branches
@@ -68,6 +67,8 @@ ignore = [
     "COM812",   # it's used in ruff formatter
     "ASYNC109",
     "G004",
+    "D203",    # pydocstyle: one-blank-line-before-class (conflicts with D211)
+    "D213",    # pydocstyle: multi-line-summary-second-line (conflicts with D212)
 ]
 [tool.ruff.lint.pep8-naming]
 classmethod-decorators = ["field_validator"]

@@ -10,6 +10,7 @@ load_dotenv()
 
 
 def _get_proxy_url(env_var: str) -> str:
+    """Get proxy URL from environment variable or fail the test."""
     value = os.environ.get(env_var)
     if not value:
         raise pytest.fail(f"{env_var} not set in .env file")
@@ -21,9 +22,11 @@ def _get_proxy_url(env_var: str) -> str:
 
 @pytest.fixture
 def http_proxy() -> str:
+    """Return HTTP proxy URL from environment."""
     return _get_proxy_url("HTTP_PROXY")
 
 
 @pytest.fixture
 def socks_proxy() -> str:
+    """Return SOCKS5 proxy URL from environment."""
     return _get_proxy_url("SOCKS5_PROXY")
